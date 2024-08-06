@@ -5,9 +5,9 @@
 
 ## Step 1: Download pre-build KG and CUI embedding
 
-Pre-build UMLS SNOMED CUI graph object (with physician selected relations pertinent to diagnosis): [download](https://drive.google.com/file/d/1zlb0zey_tAnFWtCY_NvhA0dqfydL4Ph7/view?usp=sharing)
+Pre-build UMLS SNOMED CUI graph object (with physician selected relations pertinent to diagnosis): [download](https://drive.google.com/file/d/1zlb0zey_tAnFWtCY_NvhA0dqfydL4Ph7/view?usp=sharing) This file is about 700 MB. 
 
-Pre-build Graph CUI Embedding (generated from SapBERT encoder): [download]()
+Pre-build Graph CUI Embedding (generated from SapBERT encoder): [download]() For each CUI, we generated embedding using `CUI Preferred Text 1 [SEP] CUI Preferred Text 2 [SEP] ... [SEP]`. This file is about 1.3 GB. 
 
 ## Step 2: Training
 
