@@ -11,6 +11,8 @@ Pre-build Graph CUI Embedding (generated from SapBERT encoder): [download]()
 
 ## Step 2: Training
 
-We offer two trainer for DR.Knows: Multi-head Attention and Trilinear Attention. 
+We offer two trainer for DR.Knows: Multi-head Attention and Trilinear Attention. Both trainer scripts are optimized for MPI (training reduced to 2-3 hours on 5k notes input), so please have [mpi4py](https://mpi4py.readthedocs.io/en/stable/) installed. 
 
 ## Step 3: Inference 
+
+
