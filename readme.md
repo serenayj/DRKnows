@@ -123,7 +123,12 @@ Input File Format Options:
   }
 }
 ```
- 
+
+### Test Scripts
+- `test_stack_triattn.py`: DR.Knows with TriAttn
+- `test_stack.py`: DR.Knows with MultiAttn
+
+
 ### Load Pretrained Models
 
 In this step, you will need the saved checkpoints from training, they are: 
