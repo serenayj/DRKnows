@@ -70,4 +70,73 @@ To start training, use the following command:
 
 ## Step 3: Inference 
 
+### Format Your Test Set 
+The input data for clinical notes or patient records needs to be provided in a structured format that the model can process. The data will be loaded from a file (JSON or pickle format) and fed into the model for prediction.
 
+Data Fields:
+
+- Input text: The clinical notes or patient records that describe the patient’s condition, symptoms, diagnoses, etc.
+- Input CUIs (Concept Unique Identifiers): A list of CUIs that represent the medical concepts extracted from the input text.
+- Paths (Optional): If available, the known paths or relationships between CUIs in the data. This can be used in training or evaluation settings.
+
+Input File Format Options:
+
+- JSON Format
+- Each data point (clinical note) is stored as a key-value pair.
+- Example:
+```
+  {
+  "data_1": {
+    "input text": "Patient has a history of hypertension and presents with chest pain.",
+    "input A CUI": ["C0011847", "C0013404"],  # Hypertension and Chest Pain CUIs
+    "paths": [
+      ["C0011847", "C0013404"],  # Example path (CUI relationships)
+      ["C0011847", "C0027051"]   # Another potential path
+    ]
+  },
+  "data_2": {
+    "input text": "Diabetes patient with kidney failure.",
+    "input A CUI": ["C0011849", "C0022658"],  # Diabetes and Kidney Failure CUIs
+    "paths": [
+      ["C0011849", "C0022658"]
+    ]
+  }
+}
+```
+ 
+### Load Pretrained Models
+
+In this step, you will need the saved checkpoints from training, they are: 
+- `gmodel.pth`: the saved state of the graph model (referred to as gmodel in the code), which is a key component of the system used for reasoning over clinical data.
+- `encoder.pth` is the saved state of a pretrained language model 
+
+Load the pretrained models as shown in the script: 
+```
+tokenizer = AutoTokenizer.from_pretrained("/home/ygao/LAB_SHARED/home/ygao/nlp_models/SapBERT-from-PubMedBERT-fulltext")
+model = AutoModel.from_pretrained("/home/ygao/LAB_SHARED/home/ygao/nlp_models/SapBERT-from-PubMedBERT-fulltext")
+
+pretrained_model_path = "/home/ygao/LAB_SHARED/PROJECTS/049-Clinical_Diagnostic_Reasoning/Sandbox/ygao_KG/Models/Wisc_Models/k2_N12_H3_CL_V4_CosinewBERT_TRATTN_Weight_Stack_Flat_Oracle01-06-23-21/"
+trainer.gmodel.load_state_dict(torch.load(pretrained_model_path + "gmodel.pth"))
+trainer.encoder.load_state_dict(torch.load(pretrained_model_path + "encoder.pth"))
+```
+
+### How do `gmodel.pth` and `encoder.pth` work together during inference?
+
+- Step 1: Embedding Text: The encoder.pth takes clinical notes or patient records and converts them into vector representations using a transformer model like SapBERT.
+- Step 2: Graph Traversal: The embeddings from encoder.pth are then fed into the graph model (gmodel.pth), which traverses the clinical concept graph (using Graph Neural Network layers) to reason about the relationships between clinical concepts.
+- Step 3: Path Ranking: The graph model encodes paths in the graph (sequences of concepts and relationships) and ranks them to determine which concepts are most likely relevant to the input text.
+- Step 4: Final Prediction: Based on the ranked paths, the model makes a final prediction about which clinical concept(s) are relevant to the input text.
+
+
+### Output Format
+
+The output will be a JSON file containing the predicted clinical concept paths for each input note. An example output file format is as follows: 
+
+```
+{
+    "note1": ["C0006826 --> causes --> C0002871"],
+    "note2": ["C0018801 --> results_in --> C0002871"]
+}
+```
+
+The target (destination) CUIs are the predicted CUIs. You will need to use the `CUI-Preferred Text` to convert back the preferred text before injecting them into LLMs. 
