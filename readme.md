@@ -4,11 +4,27 @@
 
 This is the code repository for our DR.Knows Paper. Please cite us if you are using this repo: 
 
-Gao Y, Li R, Caskey J, Dligach D, Miller T, Churpek MM, Afshar M. Leveraging a medical knowledge graph into large language models for diagnosis prediction. arXiv preprint arXiv:2308.14321. 2023 Aug 28. 
+```
+@article{gao2023leveraging,
+  title={Leveraging a medical knowledge graph into large language models for diagnosis prediction},
+  author={Gao, Yanjun and Li, Ruizhe and Caskey, John and Dligach, Dmitriy and Miller, Timothy and Churpek, Matthew M and Afshar, Majid},
+  journal={arXiv preprint arXiv:2308.14321},
+  year={2023}
+}
+```
 
 OR 
 
-Gao Y, Li R, Croxford E, Tesch S, To D, Caskey J, W. Patterson B, M. Churpek M, Miller T, Dligach D, Afshar M. Large language models and medical knowledge grounding for diagnosis prediction. medRxiv. 2023 Nov 27:2023-11.
+```
+@article{gao2023large,
+  title={Large language models and medical knowledge grounding for diagnosis prediction},
+  author={Gao, Yanjun and Li, Ruizhe and Croxford, Emma and Tesch, Samuel and To, Daniel and Caskey, John and W. Patterson, Brian and M. Churpek, Matthew and Miller, Timothy and Dligach, Dmitriy and others},
+  journal={medRxiv},
+  pages={2023--11},
+  year={2023},
+  publisher={Cold Spring Harbor Laboratory Press}
+}
+```
 
 The paper is currently under reviewed. 
 
