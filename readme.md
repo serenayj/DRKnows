@@ -1,5 +1,7 @@
 # DR.KNOWs: Diagnostic Reasoning Knowledge Graphs for LLM Diagnosis Prediction 
 
+![Knowledge Graph Representation](drknows_architecture.png)
+
 This is the code repository for our DR.Knows Paper. Please cite us if you are using this repo: 
 
 Gao Y, Li R, Caskey J, Dligach D, Miller T, Churpek MM, Afshar M. Leveraging a medical knowledge graph into large language models for diagnosis prediction. arXiv preprint arXiv:2308.14321. 2023 Aug 28. 
@@ -9,6 +11,8 @@ OR
 Gao Y, Li R, Croxford E, Tesch S, To D, Caskey J, W. Patterson B, M. Churpek M, Miller T, Dligach D, Afshar M. Large language models and medical knowledge grounding for diagnosis prediction. medRxiv. 2023 Nov 27:2023-11.
 
 The paper is currently under reviewed. 
+
+
 
 ## Requirements 
 Before training, ensure that the following packages are installed:
