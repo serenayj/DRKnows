@@ -36,17 +36,17 @@ We offer two trainer for DR.Knows: Multi-head Attention and Trilinear Attention.
 
 The training parameters can be set directly in the command line or through the argument parser in the script. Key parameters include:
 
-``
- --lr: Learning rate for the model (default: 1e-5).
- --max_k: Number of hops in the graph (default: 2).
- --top_n: Number of top paths per iteration (default: 8).
- --epoch: Number of training epochs (default: 10).
- --gnn_update: Whether to update GNN layers during training (default: True).
- --train_data: Path to the training data.
- --dev_data: Path to the development data.
- --cui_weight_path: Path to the CUI weights file.
- --output_path: Path to save model checkpoints and outputs. 
- ``
+```
+--lr: Learning rate for the model (default: 1e-5).
+--max_k: Number of hops in the graph (default: 2).
+--top_n: Number of top paths per iteration (default: 8).
+--epoch: Number of training epochs (default: 10).
+--gnn_update: Whether to update GNN layers during training (default: True).
+--train_data: Path to the training data.
+--dev_data: Path to the development data.
+--cui_weight_path: Path to the CUI weights file.
+--output_path: Path to save model checkpoints and outputs.
+```
 
 To start training, use the following command:
  ``python triattn_trainer.py --lr 1e-5 --max_k 2 --top_n 8 --epoch 10 --train_data ./data/mimic_k2_train.json --dev_data ./data/mimic_k2_dev.json --output_path ./output/`` 
