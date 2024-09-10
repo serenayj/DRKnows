@@ -10,6 +10,21 @@ Gao Y, Li R, Croxford E, Tesch S, To D, Caskey J, W. Patterson B, M. Churpek M, 
 
 The paper is currently under reviewed. 
 
+## Requirements 
+Before training, ensure that the following packages are installed:
+
+- Python 3.x
+- PyTorch
+- Transformers (from HuggingFace)
+- NumPy
+- Pandas
+- tqdm
+- mpi4py (for parallelization)
+- NetworkX
+- Faiss (for distance calculations)
+- Pickle
+ 
+
 ## Step 0: Setup QuickUMLS 
 
 ## Step 1: Prepare Data: Download pre-build KG and CUI embedding
