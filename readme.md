@@ -5,11 +5,14 @@
 This is the code repository for our DR.Knows Paper. Please cite us if you are using this repo: 
 
 ```
-@article{gao2023leveraging,
-  title={Leveraging a medical knowledge graph into large language models for diagnosis prediction},
-  author={Gao, Yanjun and Li, Ruizhe and Caskey, John and Dligach, Dmitriy and Miller, Timothy and Churpek, Matthew M and Afshar, Majid},
-  journal={arXiv preprint arXiv:2308.14321},
-  year={2023}
+@article{gao2025leveraging,
+  title={Leveraging Medical Knowledge Graphs Into Large Language Models for Diagnosis Prediction: Design and Application Study},
+  author={Gao, Yanjun and Li, Ruizhe and Croxford, Emma and Caskey, John and Patterson, Brian W and Churpek, Matthew and Miller, Timothy and Dligach, Dmitriy and Afshar, Majid},
+  journal={JMIR AI},
+  volume={4},
+  pages={e58670},
+  year={2025},
+  publisher={JMIR Publications Toronto, Canada}
 }
 ```
 
