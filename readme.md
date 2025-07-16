@@ -67,6 +67,7 @@ Besides the above files, we also provide the `CUI-Preferred Text` vocabulary ([D
 
 You could also choose to generate your own CUI embedding file, using the `generate_CUI_embedding.py` script. 
  
+DR.Knows did not use all edge relations from UMLS. A board-certified physician scientist manually examined all relations in the UMLS, and refined the set of relations that **are relevant to diagnostic reasoning**. This excludes the concept hierarhchy such as parent or child relation. The resulted set of 108 relations are included in this repo: UMLS_refined_relations_DRKnows.csv. 
 
 ## Step 2: Training
 
